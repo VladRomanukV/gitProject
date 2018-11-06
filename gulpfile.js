@@ -10,7 +10,8 @@ var gulp         = require('gulp'),
     pngquant     = require('imagemin-pngquant'),
     cache        = require('gulp-cache'),
     autoprefixer = require('gulp-autoprefixer'),
-    plumber      = require('gulp-plumber');
+    plumber      = require('gulp-plumber'),
+    stylus       = require('gulp-stylus');
 
     gulp.task('sass', function() {
         return gulp.src('app/sass/**/*.sass')
@@ -20,22 +21,18 @@ var gulp         = require('gulp'),
         .pipe(browserSync.reload({stream: true}))
     });
 
+    gulp.task('style', function() {
+        return gulp.src('app/sty/**/*.styl')
+        .pipe(stylus())
+        .pipe(gulp.dest('app/css'))
+    });
+
     gulp.task('plamber', function() {
 
         return gulp.src('./app/*.sass')
         .pipe(sass())
         .pipe(gulp.dest('./dist'));
 
-    })
-
-    gulp.task('scripts', function() {
-        return gulp.src([
-            'app/libs/jquery/dist/jquery.min.js',
-            'app/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
-        ])
-        .pipe(concat('libs.min.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('app/js'));
     });
 
     gulp.task('scc-libs', ['sass'], function() {
@@ -73,8 +70,9 @@ var gulp         = require('gulp'),
         .pipe(gulp.dest('dist/img'))
     });
 
-    gulp.task('watch', ['browserSync', 'scc-libs', 'scripts', 'plamber'], function() {
+    gulp.task('watch', ['browserSync', 'scc-libs', 'plamber', 'style'], function() {
         gulp.watch('app/sass/**/*.sass', ['sass']);
+        gulp.watch('app/sty/**/*.styl', ['style']);
         gulp.watch('app/*.html', browserSync.reload);
         gulp.watch('app/js/**/*.js', browserSync.reload);
     });

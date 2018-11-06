@@ -47,8 +47,25 @@ table {
 a, button {
   cursor: pointer !important; }
 
-body {
+header {
+  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex; }
+
+.head_logo {
+  background: #a4c639;
+  width: 30%;
+  color: #fff; }
+
+h1 {
+  display: block;
+  padding: 20px 0;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 55px; }
+
+.head_nav {
+  background: #3a4246;
+  width: 75%; }

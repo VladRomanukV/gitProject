@@ -1,0 +1,19 @@
+header {
+  width: 100%;
+  display: flex;
+}
+.head_logo {
+  width: 30%;
+  background: col-hd-bg1;
+}
+.head_logo h1 {
+  font-size: 50px;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0 0 0;
+}
+.head_nav {
+  width: 70%;
+  background: col-hd-bg2;
+  display: flex;
+}

@@ -24,7 +24,11 @@
     "gulp-plumber": "^1.2.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.1",
+    "gulp-stylus": "^2.7.0",
     "gulp-uglifyjs": "^0.6.2",
     "imagemin-pngquant": "^6.0.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.0"
   }
 }

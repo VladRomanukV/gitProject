@@ -1,17 +1,23 @@
-@import "_reset.scss"
+@import "reset.scss"
 
 $col_bg: #fff
+$col_bg_hd: #a4c639
+$col_bg_hd2: #3a4246
+$col_bg_fot: #1b4471
+$col_active: #3a4246
+
 $col_h1: #fff
-$col_h2: #061e37
+$col_h2: #009de0
 $col_h3: #b0bec5
 $col_h4: #061e37
 $col_h5: #061e37
 $col_h6: #061e37
 
-$col_tx: #b0bec5
+$col_tx: #34446d
 $col_so: #b0bec5
 $col_zs: #b0bec5
-$col_bt: #061e37
+$col_bt: #fff
+$col_bt_bg: #3392be
 $col_ac: #061e37
 $col_a: #fff
 
@@ -40,5 +46,18 @@ $fon_p:  'Montserrat', sans-serif
 $fon_a:  'Raleway', sans-serif
 $fon_hov: 'Roboto', sans-serif
 
-body
-  display: flex
+
+@import 'fonts'
+@import 'header'
+@import 'aside'
+@import 'main-cont'
+
+%bor_box
+  color: $col_bt
+  background: $col_bt_bg
+  font-size: 16px
+  border-radius: 20px
+  border: none
+  padding: 5px 20px
+  &:hover
+    background: #f4a668
